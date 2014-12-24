@@ -9,6 +9,7 @@ import /init.usb.rc
 import /init.${ro.hardware}.rc
 import /init.${ro.zygote}.rc
 import /init.trace.rc
+import /init.eos.rc
 
 on early-init
     # Set init and its forked children's oom_adj.
@@ -325,10 +326,7 @@ on post-fs-data
     # must uncomment this line, otherwise encrypted filesystems
     # won't work.
     # Set indication (checked by vold) that we have finished this action
-    #setprop vold.post_fs_data_done 1
-
-# Include extra init file
-    import /init.eos.rc
+    #setprop vold.post_fs_data_done 1    
 
 on boot
     # basic network init
